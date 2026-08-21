@@ -1,0 +1,1 @@
+"./tm4c123gh6pm_startup_ccs.obj" "./uartstdio.obj" "./APP/OS.obj" "./APP/PendSV_Handler.obj" "./APP/adc.obj" "./APP/dht.obj" "./APP/led.obj" "./APP/mailbox.obj" "./APP/main.obj" "./APP/oled.obj" "./APP/uart.obj" "./APP/weather.obj" "../tm4c123gh6pm.cmd" -llibc.a -l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" 
