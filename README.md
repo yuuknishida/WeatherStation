@@ -42,5 +42,6 @@ The system was designed with fault tolerance in mind. Invalid or disconnected se
 ## System Architecture
 
 The TM4C123GXL acts as the central processing unit for the entire weather station.
-![Project Screenshot](weather system diagram.png)
+<img src="weather_system_diagram.png" alt="Project Screenshot" width="500">
+
 
