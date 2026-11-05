@@ -43,21 +43,4 @@ The system was designed with fault tolerance in mind. Invalid or disconnected se
 
 The TM4C123GXL acts as the central processing unit for the entire weather station.
 
-```text
-                         ┌──────────────────────┐
-                         │      TM4C123GXL      │
-                         │      LaunchPad       │
-                         │                      │
-                         │      Custom RTOS     │
-                         └──────────┬───────────┘
-                                    │
-          ┌─────────────────────────┼─────────────────────────┐
-          │                         │                         │
-          ▼                         ▼                         ▼
-   ┌──────────────┐          ┌──────────────┐         ┌──────────────┐
-   │ Wind Sensors │          │ Environmental │         │   Outputs    │
-   │              │          │   Sensors     │         │              │
-   │ Anemometer   │          │ DHT11         │         │ OLED         │
-   │ Wind Vane    │          │ MQ-135        │         │ UART         │
-   └──────────────┘          └──────────────┘         │ LEDs         │
-                                                      └──────────────┘
+
