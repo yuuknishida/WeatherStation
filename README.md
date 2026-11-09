@@ -18,12 +18,14 @@ A bare metal weather station running on a custom preemptive RTOS kernel written 
 4. MQ-135 Analog (0-5V), 12-bit ADC
 5. LED compass (GPIO 8 LEDS)
 
-## Tasks                Period   | Description
-Task_AirQuality      | 100 ms    | Reads MQ-135 via ADC0 SS2
-Task_WindDirection   | 110 ms    | Modbus requet to vane, updates LED compass
-Task_WindSpeed       | 150 ms    | 16-sample average ADC -> mph, with debounce
-Task_DisplayUpdate   | 900 ms    | snapshot -> OLED -> UART
-Task_TempHumidity    | 2000 ms   | DHT11 40-bit read
+## Tasks                
+Task | Period   | Description
+| :--- | :---: | :-- |
+| Task_AirQuality      | 100 ms    | Reads MQ-135 via ADC0 SS2 |
+| Task_WindDirection   | 110 ms    | Modbus requet to vane, updates LED compass |
+| Task_WindSpeed       | 150 ms    | 16-sample average ADC -> mph, with debounce |
+| Task_DisplayUpdate   | 900 ms    | snapshot -> OLED -> UART |
+| Task_TempHumidity    | 2000 ms   | DHT11 40-bit read |
 
 ## How the RTOS Works
 1. Task Creation: each task gets its own 128-word stack, pre-loaded with a fake exception frame (xPSR, PC, LR, R0-R12)
@@ -31,12 +33,14 @@ Task_TempHumidity    | 2000 ms   | DHT11 40-bit read
 3. Tick: SysTick fires every 1ms, decrements sleep counters, wakes sleeping tasks, and pends PendSV
 4. Scheduling: the lowest index READY task runs.
 
-## Timing results      Period         Execution
-Task_AirQuality      | 100 ms    | 6 ms
-Task_WindDirection   | 110 ms    | 47 ms
-Task_WindSpeed       | 150 ms    | 59 ms
-Task_DisplayUpdate   | 900 ms    | 54 ms
-Task_TempHumidity    | 2000 ms   | 146 ms
+## Timing results      
+Task | Period | Execution
+| :--- | :---: | :-- |
+| Task_AirQuality      | 100 ms    | 6 ms |
+| Task_WindDirection   | 110 ms    | 47 ms |
+| Task_WindSpeed       | 150 ms    | 59 ms |
+| Task_DisplayUpdate   | 900 ms    | 54 ms |
+| Task_TempHumidity    | 2000 ms   | 146 ms |
 
 For the test we conducted 7 tests.
 Test 1: High speed with constant direction
